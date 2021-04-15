@@ -1,6 +1,14 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://mysql:3306/kubetest?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://127.0.0.1:23306/kubetest?serverTimezone=UTC&characterEncoding=UTF-8
     username: kube
     password: kube
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+auth:
+  private-key: MIICXQIBAAKBgQC5tk/ggjT/pKBI2tjK3Xaoc0TmqnicxZV1TGaxyTrkBPRf7KogGwQ//IRBZk+ht6mD8kGoDOsMeWOsBpzCCLfeydIZLb6trBAjwubqQrlNA45g6nh2vbODRJ3/FijGuTboG/I74JY7isOeXcc776LhmSpxLR4PviuGaPfbgHScywIDAQABAoGAdLYp3vuVmS/5969p3Zx:wu7RB8NcbexA+8jRo10/eWRiUC+6H9jO3NrvTgnUVSOFz3cM/4CUgNFCrZxAvnyl22R4A6dy/VN1e0mB2yOO4J738pKvFAykn1NQN1yj1JH8PT9U/Ama22gcUjAk6XbeqXGsulh2GGyMkiVTi5xbPPucECQQDgiC9e1NKecIxakFfUCJNodEPXPc1GJ2/GzieQNACoyier3UShgKVEhRN0flKtHyuTH1by6fGRPae2UF0r6C5rAkEA071W+4t9dCSkhtxTqoWndLK8YIvL4+mKItFBMxtVrMEArv8MDdy5YDbZ6dbyIrDTzDMMtUud78xozQbjGwojIQJAZXuIFY+RhoUOGtzEpZQetAZgp0dKoVuvvKZu4VFvvtpn5dkDbQ+NIxQWv/9cdNzyv/NZRD+SrHe2dsOJ6Q9u8wJBAJ6817UFQiwMPHwOOXshcAUA6lDG/TgEIVcw4VxbJcO5fbWz52mNDDyhYoT4a9auElqH+wL/iYv5BqiOfTwMQYECQQCiA31Pzpqs2FtaCzU33A1ViY9hgGHPHD6C50qYbvVY0kCQMc7RM4nuoa6pXlrKO50QkOc4w8U66ssKD14HZrkG
+  public-key: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC5tk/ggjT/pKBI2tjK3Xaoc0TmqnicxZV1TGaxyTrkBPRf7KogGwQ//IRBZk+ht6mD8kGoDOsMeWOsBpzCCLfeydIZLb6trBAjwubqQrlNA45g6nh2vbODRJ3/FijGuTboG/I74JY7isOeXcc776LhmSpxLR4PviuGaPfbgHScywIDAQAB
