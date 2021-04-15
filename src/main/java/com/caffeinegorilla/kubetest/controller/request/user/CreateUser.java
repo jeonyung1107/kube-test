@@ -10,5 +10,10 @@ import javax.validation.constraints.NotBlank;
 public class CreateUser {
 
     @NotBlank
+    private String email;
+    @NotBlank
     private String name;
+    @NotBlank
+    private String password;
+
 }
