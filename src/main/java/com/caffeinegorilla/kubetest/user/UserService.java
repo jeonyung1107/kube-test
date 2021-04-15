@@ -46,6 +46,6 @@ public class UserService {
                 )
         );
 
-        return jwtTokenProcessor.createToken(new TokenBody(login.getEmail(), 1l));
+        return jwtTokenProcessor.createToken(new TokenBody(login.getEmail(), "USER", 1649997667000L));
     }
 }

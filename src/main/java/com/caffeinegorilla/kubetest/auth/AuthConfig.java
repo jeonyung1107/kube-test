@@ -47,7 +47,8 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").permitAll()
                 .anyRequest().hasRole("USER")
                 .and()
-                .httpBasic().disable();
+                .httpBasic().disable()
+                .csrf().disable();
     }
 
     @Override
