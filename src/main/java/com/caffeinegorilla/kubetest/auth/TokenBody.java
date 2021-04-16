@@ -1,10 +1,12 @@
 package com.caffeinegorilla.kubetest.auth;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Getter
 @AllArgsConstructor
 public class TokenBody {
     private String email;

@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Data
 @Configuration
@@ -26,6 +27,8 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserDetailServiceImpl userDetailService;
+    @Autowired
+    private JwtTokenProcessor jwtTokenProcessor;
 
     @Bean
     public PasswordEncoder passwordEncoder(){
@@ -48,7 +51,8 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().hasRole("USER")
                 .and()
                 .httpBasic().disable()
-                .csrf().disable();
+                .csrf().disable()
+                .addFilterBefore(new JwtRequestFilter(jwtTokenProcessor), UsernamePasswordAuthenticationFilter.class);
     }
 
     @Override
